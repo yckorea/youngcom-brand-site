@@ -21,6 +21,21 @@ if (menuButton && navigation) {
     document.body.style.overflow = willOpen ? 'hidden' : '';
   });
   navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navigation.classList.contains('open')) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+  const desktopMenu = window.matchMedia('(min-width: 901px)');
+  const handleDesktopMenu = (event) => {
+    if (event.matches) closeMenu();
+  };
+  if (typeof desktopMenu.addEventListener === 'function') {
+    desktopMenu.addEventListener('change', handleDesktopMenu);
+  } else {
+    desktopMenu.addListener(handleDesktopMenu);
+  }
 }
 
 const revealElements = [...document.querySelectorAll('.reveal')];
