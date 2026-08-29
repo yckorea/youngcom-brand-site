@@ -1,23 +1,30 @@
 [
   {
-    "name": "ICOM IC-7300MK2 HF/50MHz 베이스 무전기",
-    "price": "가격 문의",
-    "image": "https://www.icomeurope.com/wp-content/uploads/2025/12/df59110c80311a4e1d7a33d591408339.jpg",
-    "purchaseUrl": "https://smartstore.naver.com/ycts",
+    "name": "새제품 화영77S 차량용 CB무전기 마이크 호환 6핀",
+    "price": 25000,
+    "image": "https://shop-phinf.pstatic.net/20241123_92/1732327334343XNIaw_GIF/12939305449715758_934548529.gif",
+    "purchaseUrl": "https://smartstore.naver.com/ycts/products/11166795295",
     "featured": true
   },
   {
-    "name": "무전기 프로그램 호환 설정",
-    "price": "상담 후 안내",
-    "image": "https://www.icomeurope.com/wp-content/uploads/2025/12/20251016103053.jpg",
-    "purchaseUrl": "https://smartstore.naver.com/ycts",
+    "name": "차량용 CB 프로콤 PRO-7H 생활무전기",
+    "price": 130000,
+    "image": "https://shop-phinf.pstatic.net/20240119_64/1705650941302Cc4NI_JPEG/106786840004517018_186720300.jpg",
+    "purchaseUrl": "https://smartstore.naver.com/ycts/products/9843821487",
     "featured": true
   },
   {
-    "name": "무전기 정밀 수리 · 점검",
-    "price": "상담 후 안내",
-    "image": "https://www.icomeurope.com/wp-content/uploads/2025/12/20251016103152.jpg",
-    "purchaseUrl": "https://smartstore.naver.com/ycts",
+    "name": "CB무전기 프로콤 와이드 PRO9000 전용 마이크 6핀",
+    "price": 20000,
+    "image": "https://shop-phinf.pstatic.net/20231209_35/170210797098833pKj_JPEG/29410654776460317_1773471128.jpg",
+    "purchaseUrl": "https://smartstore.naver.com/ycts/products/9635384525",
     "featured": true
+  },
+  {
+    "name": "와이드프로 마이크 WIDE PRO 8핀 차량용 CB 마이크",
+    "price": 20000,
+    "image": "https://shop-phinf.pstatic.net/20231209_203/1702107258194SBuLc_JPEG/29409942035291388_1814520543.jpg",
+    "purchaseUrl": "https://smartstore.naver.com/ycts/products/9635357680",
+    "featured": false
   }
 ]
