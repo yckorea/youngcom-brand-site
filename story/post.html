@@ -211,7 +211,10 @@
       main.replaceChildren(article);
     };
 
-    const postsUrl = location.protocol === 'file:'\n      ? 'https://raw.githubusercontent.com/yckorea/youngcom-brand-site/main/story/posts.json'\n      : 'posts.json';\n    fetch(postsUrl, { cache: 'no-store' })
+    const postsUrl = location.protocol === 'file:'
+      ? 'https://raw.githubusercontent.com/yckorea/youngcom-brand-site/main/story/posts.json'
+      : 'posts.json';
+    fetch(postsUrl, { cache: 'no-store' })
       .then((response) => {
         if (!response.ok) throw new Error(String(response.status));
         return response.json();
