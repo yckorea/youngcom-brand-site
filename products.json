@@ -4,27 +4,32 @@
     "price": 25000,
     "image": "https://shop-phinf.pstatic.net/20241123_92/1732327334343XNIaw_GIF/12939305449715758_934548529.gif",
     "purchaseUrl": "https://smartstore.naver.com/ycts/products/11166795295",
-    "featured": true
+    "featured": true,
+    "tagline": "차량용 CB 마이크 교체가 필요할 때"
   },
   {
     "name": "차량용 CB 프로콤 PRO-7H 생활무전기",
     "price": 130000,
     "image": "https://shop-phinf.pstatic.net/20240119_64/1705650941302Cc4NI_JPEG/106786840004517018_186720300.jpg",
     "purchaseUrl": "https://smartstore.naver.com/ycts/products/9843821487",
-    "featured": true
+    "featured": true,
+    "tagline": "차량에서 바로 연락해야 할 때"
   },
   {
     "name": "CB무전기 프로콤 와이드 PRO9000 전용 마이크 6핀",
     "price": 20000,
     "image": "https://shop-phinf.pstatic.net/20231209_35/170210797098833pKj_JPEG/29410654776460317_1773471128.jpg",
     "purchaseUrl": "https://smartstore.naver.com/ycts/products/9635384525",
-    "featured": true
+    "featured": true,
+    "tagline": "PRO9000 전용 마이크가 필요할 때"
   },
   {
     "name": "와이드프로 마이크 WIDE PRO 8핀 차량용 CB 마이크",
     "price": 20000,
     "image": "https://shop-phinf.pstatic.net/20231209_203/1702107258194SBuLc_JPEG/29409942035291388_1814520543.jpg",
     "purchaseUrl": "https://smartstore.naver.com/ycts/products/9635357680",
-    "featured": false
+    "featured": false,
+    "tagline": "8핀 차량용 CB 마이크가 필요할 때"
   }
 ]
+

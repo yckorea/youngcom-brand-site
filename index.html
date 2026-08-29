@@ -3,124 +3,114 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="복잡한 통신을 쉽고 정직하게 안내하는 영컴통신입니다.">
-  <meta name="theme-color" content="#f7f5ef">
-  <title>영컴통신 | 내게 맞는 연결을 더 쉽게</title>
+  <meta name="description" content="영컴통신은 업무용 디지털무전기와 중계 시스템을 현장 조건에 맞춰 구성하고 판매 이후까지 책임지는 무선 통신 전문 브랜드입니다.">
+  <meta name="theme-color" content="#1a1a1a">
+  <title>영컴통신 | 현장을 위한 업무용 무선 통신</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preload" as="image" href="assets/hero-poster.jpg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="catalog.css">
   <link rel="stylesheet" href="assets/cart.css">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
-
   <header class="site-header" id="top">
     <div class="header-inner">
-      <a class="brand" href="#home" aria-label="영컴통신 홈">
-        <span class="brand-mark" aria-hidden="true">영</span>
-        <span>영컴통신</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">메뉴 열기</span><span></span><span></span>
-      </button>
+      <a class="brand" href="#home" aria-label="영컴통신 홈"><span class="brand-mark" aria-hidden="true">YC</span><span>영컴통신</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">메뉴 열기</span><span></span><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-        <a href="#home">홈</a><a href="about.html">내 소개</a><a href="products.html">제품</a>
-        <a href="story/">이야기</a><a class="nav-cta" href="#contact">연락하기</a>
+        <a class="active" href="#home">홈</a><a href="about.html">회사 소개</a><a href="products.html">제품</a>
+        <a href="story/">인사이트</a><a class="nav-cta" href="#contact">도입 문의</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="home">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">YOUNGCOM COMMUNICATIONS</p>
-        <h1>내게 맞는 연결을,<br><em>더 쉽게.</em></h1>
-        <p class="hero-description">영컴통신은 복잡한 요금과 기기 선택을 알기 쉽게 풀어드리는 생활 통신 파트너입니다.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#products">대표 제품 보기</a>
-          <a class="text-link" href="#contact">편하게 상담하기 <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="trust-row" aria-label="서비스 특징">
-          <span>정직한 안내</span><span>맞춤 상담</span><span>꼼꼼한 사후 관리</span>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-label="영컴통신의 연결 서비스를 표현한 이미지">
-        <div class="signal signal-one"></div><div class="signal signal-two"></div>
-        <div class="phone-card">
-          <div class="phone-top"><span></span><span>5G</span></div>
-          <div class="phone-message">
-            <span class="message-dot">영</span>
-            <div><small>오늘의 안내</small><strong>나에게 딱 맞는<br>통신 생활</strong></div>
+    <section class="hero-scrub" id="home" data-scrub aria-label="영컴통신 업무용 무선 통신 솔루션">
+      <div class="hero-stage">
+        <video data-scrub-video muted playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true"></video>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow eyebrow-on-dark">BUSINESS RADIO SYSTEMS</p>
+          <h1>어떤 현장에서도,<br><em>타협 없는 연결.</em></h1>
+          <p class="hero-description">업무용 디지털무전기와 중계 시스템을 현장 조건에 맞춰 구성하고, 판매 이후까지 책임집니다.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">제품 라인업 보기</a>
+            <a class="button button-ghost" href="#contact">도입 문의하기</a>
           </div>
-          <div class="plan-pill"><span>추천 요금제</span><strong>데이터 걱정 없이</strong></div>
-          <div class="phone-line"></div><div class="phone-line short"></div>
+          <ul class="hero-proof" aria-label="영컴통신의 강점">
+            <li>30년 무선 기술 경험</li><li>프로그램 호환·수리</li><li>판매 후 사후책임</li>
+          </ul>
         </div>
-        <div class="floating-note note-top">상담 만족도 <strong>98%</strong></div>
-        <div class="floating-note note-bottom"><span class="green-dot"></span> 오늘도 상담 가능</div>
+        <div class="scroll-cue" aria-hidden="true">SCROLL <span></span></div>
       </div>
     </section>
 
-    <section class="section intro" id="about">
-      <div class="section-label">01 &nbsp; ABOUT</div>
-      <div class="intro-grid">
-        <div class="section-heading reveal">
-          <p class="eyebrow">반갑습니다</p>
-          <h2>오래 쓰는 통신,<br>처음부터 <em>편안하게</em></h2>
+    <section class="section value-section" id="about">
+      <div class="section-index">01 / FIELD SOLUTION</div>
+      <div class="section-split">
+        <div class="reveal">
+          <p class="eyebrow">현장 문제 해결</p>
+          <h2>현장의 흐름이<br>끊기지 않도록.</h2>
         </div>
-        <div class="intro-copy reveal">
-          <p class="lead">좋은 통신 서비스는 화려한 말보다 내 생활을 정확히 이해하는 데서 시작한다고 믿습니다.</p>
-          <p>영컴통신은 고객 한 분 한 분의 사용 패턴과 예산을 꼼꼼히 살펴 꼭 필요한 선택지만 안내합니다. 개통하는 순간뿐 아니라 사용하는 동안에도 편하게 찾을 수 있는 가까운 파트너가 되겠습니다.</p>
-          <dl class="stats">
-            <div><dt>1:1</dt><dd>개인 맞춤 상담</dd></div>
-            <div><dt>365</dt><dd>든든한 사후 관리</dd></div>
-            <div><dt>100%</dt><dd>투명한 안내</dd></div>
-          </dl>
+        <div class="section-copy reveal">
+          <p class="lead">통신이 멈추면 작업 확인과 안전 전달도 함께 늦어집니다.</p>
+          <p>영컴통신은 거리와 구조물, 사용 장비와 채널을 먼저 살펴 현장에 필요한 통신 구성을 찾습니다.</p>
         </div>
+      </div>
+      <div class="value-grid">
+        <article class="value-card reveal"><span>01</span><h3>현장 조건 분석</h3><p>지하·터널·장거리 구간처럼 통신이 어려운 지점을 먼저 확인합니다.</p></article>
+        <article class="value-card reveal"><span>02</span><h3>호환 구성</h3><p>기존 무전기와 프로그램, 채널 조건을 살펴 필요한 구성을 제안합니다.</p></article>
+        <article class="value-card reveal"><span>03</span><h3>끝까지 책임</h3><p>상담과 수리, 판매 이후의 사후관리까지 한 인연을 오래 이어갑니다.</p></article>
       </div>
     </section>
 
     <section class="section products" id="products">
+      <div class="section-index">02 / CURATED PRODUCTS</div>
       <div class="section-top reveal">
-        <div><p class="eyebrow">FEATURED PRODUCTS</p><h2>현장에서 믿고 쓰는<br><em>대표 제품과 기술</em></h2></div>
-        <p>제품 선택부터 프로그램 호환, 수리와 사후관리까지 30년 경험으로 함께합니다.</p>
+        <div><p class="eyebrow">대표 제품</p><h2>현장에 필요한 장비를<br>분명하게 고릅니다.</h2></div>
+        <p>등록된 제품 중 대표 한 가지를 크게 보여드리고, 나머지는 필요한 정보만 간결하게 정리했습니다.</p>
       </div>
-      <div class="catalog-grid" data-product-list data-featured="true" data-limit="3" aria-live="polite">
-        <p class="catalog-error">대표 제품을 불러오는 중입니다.</p>
+      <div class="catalog-curation" data-product-list data-curated="true" data-limit="5" aria-live="polite"><p class="catalog-error">제품 정보를 불러오는 중입니다.</p></div>
+      <div class="catalog-more"><a class="button button-primary" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">전체 제품 보기 <span>↗</span></a></div>
+    </section>
+
+    <section class="section industry-section">
+      <div class="section-index">03 / INDUSTRIES</div>
+      <div class="section-split">
+        <div class="reveal"><p class="eyebrow">활용 분야</p><h2>통신이 중요한<br>현장에 맞춥니다.</h2></div>
+        <p class="section-copy reveal">장비를 먼저 정하지 않습니다. 실제 거리와 장애물, 작업 방식부터 듣고 필요한 범위를 함께 검토합니다.</p>
       </div>
-      <div class="catalog-more"><a class="button button-primary" href="products.html">전체 제품 보기 <span>→</span></a></div>
+      <div class="industry-grid">
+        <article class="industry-card reveal"><b>CONSTRUCTION</b><h3>건설·토목·철탑</h3><p>멀리 떨어진 작업자의 지시와 확인이 필요한 현장</p></article>
+        <article class="industry-card reveal"><b>FACILITY</b><h3>공장·대형건물</h3><p>벽과 층으로 나뉜 공간을 관리해야 하는 현장</p></article>
+        <article class="industry-card reveal"><b>INFRASTRUCTURE</b><h3>터널·관로·보안</h3><p>휴대전화 사용이 어렵거나 긴 구간을 연결해야 하는 현장</p></article>
+      </div>
     </section>
 
     <section class="section story" id="story">
-      <div class="section-top reveal">
-        <div><p class="eyebrow">LATEST STORIES</p><h2>현장에서 전하는<br><em>통신 이야기</em></h2></div>
-        <a class="text-link" href="story/">이야기 더 보기 <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="story-list" data-home-stories aria-live="polite">
-        <p class="catalog-error">최신 이야기를 불러오는 중입니다.</p>
-      </div>
+      <div class="section-index">04 / INSIGHTS</div>
+      <div class="section-top reveal"><div><p class="eyebrow">현장 인사이트</p><h2>30년 경험에서 나온<br>무선 통신 이야기.</h2></div><a class="text-link" href="story/">전체 글 보기 <span aria-hidden="true">↗</span></a></div>
+      <div class="story-list" data-home-stories aria-live="polite"><p class="catalog-error">최신 이야기를 불러오는 중입니다.</p></div>
     </section>
 
     <section class="contact" id="contact">
       <div class="contact-inner reveal">
-        <p class="eyebrow">LET'S TALK</p>
-        <h2>무엇이 궁금한지<br><em>편하게 들려주세요.</em></h2>
-        <p>어렵게 생각하지 않아도 괜찮아요.<br>영컴통신이 하나씩 함께 살펴보겠습니다.</p>
+        <p class="eyebrow eyebrow-on-dark">PROJECT INQUIRY</p>
+        <h2>당신의 현장에는<br>어떤 연결이 필요합니까?</h2>
+        <p>거리와 구조, 사용 중인 장비를 알려주시면 현장에 맞는 방향을 함께 살펴보겠습니다.</p>
         <div class="contact-actions">
-          <a class="button button-light" href="tel:000-0000-0000">전화 상담 <span>000-0000-0000</span></a>
-          <a class="button button-outline" href="mailto:hello@example.com">이메일 문의</a>
+          <a class="button button-primary" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">스마트스토어 문의</a>
+          <a class="button button-ghost" href="products.html">제품 먼저 보기</a>
         </div>
-        <small>운영 시간 평일 10:00–18:00 · 주말 및 공휴일 휴무 (임시 정보)</small>
       </div>
-      <div class="contact-orbit" aria-hidden="true"><span>Y</span></div>
     </section>
   </main>
 
   <footer>
-    <a class="brand footer-brand" href="#top"><span class="brand-mark">영</span><span>영컴통신</span></a>
-    <div class="footer-info">
-      <p>대표 홍길동 &nbsp;·&nbsp; 사업자등록번호 000-00-00000 &nbsp;·&nbsp; 서울시 어딘가 (임시 정보)</p>
-      <p>© <span id="year"></span> YOUNGCOM COMMUNICATIONS. ALL RIGHTS RESERVED.</p>
-    </div>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">YC</span><span>영컴통신</span></a>
+    <div class="footer-info"><p>업무용 디지털무전기 · 중계 시스템 · 프로그램 호환 · 수리</p><p>© <span id="year"></span> YOUNGCOM COMMUNICATIONS.</p></div>
     <a class="back-top" href="#top" aria-label="맨 위로 이동">↑</a>
   </footer>
   <script src="script.js"></script>
@@ -129,4 +119,3 @@
   <script src="assets/cart.js" defer></script>
 </body>
 </html>
-

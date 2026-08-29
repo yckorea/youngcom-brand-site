@@ -6,12 +6,12 @@
      클래스 이름은 전부 rdcart- 로 시작해서 내 사이트 CSS 와 겹치지 않습니다.
    ========================================================================== */
 :root {
-  --cart-bg:     var(--paper, #f7f5ef);
-  --cart-ink:    var(--ink, #17211b);
-  --cart-line:   var(--line, rgba(23, 33, 27, .14));
-  --cart-accent: var(--orange, #e56f3d);
-  --cart-radius: 18px;
-  --cart-font:   var(--sans, "Noto Sans KR", system-ui, sans-serif);
+  --cart-bg:     var(--white, #fff);
+  --cart-ink:    var(--ink, #1a1a1a);
+  --cart-line:   var(--line, rgba(26, 26, 26, .16));
+  --cart-accent: var(--blue, #0056ff);
+  --cart-radius: 4px;
+  --cart-font:   var(--sans, "Pretendard", "Noto Sans KR", system-ui, sans-serif);
 }
 
 /* ───────── 열렸을 때 배경 스크롤 잠금 ───────── */
