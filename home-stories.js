@@ -59,7 +59,11 @@ if (homeStoryList) {
     homeStoryList.replaceChildren(fragment);
   };
 
-  const homeStoriesUrl = location.protocol === 'file:'\n    ? 'https://raw.githubusercontent.com/yckorea/youngcom-brand-site/main/story/posts.json'\n    : 'story/posts.json';\n\n  fetch(homeStoriesUrl, { cache: 'no-store' })
+  const homeStoriesUrl = location.protocol === 'file:'
+    ? 'https://raw.githubusercontent.com/yckorea/youngcom-brand-site/main/story/posts.json'
+    : 'story/posts.json';
+
+  fetch(homeStoriesUrl, { cache: 'no-store' })
     .then((response) => {
       if (!response.ok) throw new Error(String(response.status));
       return response.json();
