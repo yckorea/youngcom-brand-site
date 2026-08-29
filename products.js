@@ -32,7 +32,10 @@ const productCard = (product) => {
 
 const loadProducts = async () => {
   try {
-    const productDataUrl = location.protocol === 'file:'\n      ? 'https://raw.githubusercontent.com/yckorea/youngcom-brand-site/main/products.json'\n      : 'products.json';\n    const response = await fetch(productDataUrl);
+    const productDataUrl = location.protocol === 'file:'
+      ? 'https://raw.githubusercontent.com/yckorea/youngcom-brand-site/main/products.json'
+      : 'products.json';
+    const response = await fetch(productDataUrl);
     if (!response.ok) throw new Error('제품 정보를 불러오지 못했습니다.');
     const products = await response.json();
 
