@@ -59,6 +59,33 @@
       ? String(post.url)
       : `post.html?id=${encodeURIComponent(post.id || '')}`;
 
+    const appendInline = (node, source) => {
+      const value = String(source || '');
+      const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+      let cursor = 0;
+      let match;
+      while ((match = pattern.exec(value))) {
+        node.appendChild(document.createTextNode(value.slice(cursor, match.index)));
+        const label = match[1];
+        const href = match[2].trim();
+        try {
+          const resolved = new URL(href, location.href);
+          if (!['http:', 'https:', 'mailto:', 'tel:', 'file:'].includes(resolved.protocol)) throw new Error('unsafe');
+          const link = element('a', null, label);
+          link.href = href;
+          if (/^https?:/i.test(href) && resolved.origin !== location.origin) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+          }
+          node.appendChild(link);
+        } catch (_) {
+          node.appendChild(document.createTextNode(match[0]));
+        }
+        cursor = pattern.lastIndex;
+      }
+      node.appendChild(document.createTextNode(value.slice(cursor)));
+    };
+
     const renderBody = (source) => {
       const box = element('div', 'post-body');
       String(source || '').replace(/\r\n/g, '\n').split(/\n\s*\n/).forEach((raw) => {
@@ -67,12 +94,18 @@
         const lines = block.split('\n');
         if (lines.every((line) => /^- /.test(line.trim()))) {
           const list = element('ul');
-          lines.forEach((line) => list.appendChild(element('li', null, line.trim().slice(2))));
+          lines.forEach((line) => {
+            const item = element('li');
+            appendInline(item, line.trim().slice(2));
+            list.appendChild(item);
+          });
           box.appendChild(list);
         } else if (/^## /.test(block)) {
           box.appendChild(element('h2', null, block.slice(3).trim()));
         } else {
-          box.appendChild(element('p', null, block));
+          const paragraph = element('p');
+          appendInline(paragraph, block);
+          box.appendChild(paragraph);
         }
       });
       return box;
