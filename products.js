@@ -23,7 +23,11 @@ const productCard = (product) => {
   link.href = product.purchaseUrl;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
-  link.innerHTML = '구매하기 <span aria-hidden="true">↗</span>';
+  link.setAttribute('data-cart-add', '');
+  link.dataset.name = product.name;
+  link.dataset.price = String(Number(product.price) || 0);
+  link.dataset.url = product.purchaseUrl;
+  link.innerHTML = '장바구니 담기 <span aria-hidden="true">＋</span>';
 
   body.append(name, price, link);
   article.append(image, body);
@@ -54,3 +58,4 @@ const loadProducts = async () => {
 };
 
 loadProducts();
+
