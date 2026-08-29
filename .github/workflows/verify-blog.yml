@@ -1,0 +1,60 @@
+name: Verify integrated blog once
+
+on:
+  push:
+    paths:
+      - ".github/workflows/verify-blog.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser test runtime
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install chromium --with-deps
+      - name: Run browser checks
+        shell: bash
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/youngcom-http.log 2>&1 &
+          cat > /tmp/verify-blog.cjs <<'NODE'
+          const { chromium } = require(process.cwd() + '/node_modules/playwright');
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+            const errors = [];
+            page.on('console', msg => { if (msg.type() === 'error') errors.push('console: ' + msg.text()); });
+            page.on('pageerror', err => errors.push('page: ' + err.message));
+
+            await page.goto('http://127.0.0.1:4173/index.html', { waitUntil: 'networkidle' });
+            const sourceCount = await page.evaluate(() => fetch('story/posts.json').then(r => r.json()).then(p => p.length));
+            const homeCount = await page.locator('[data-home-stories] .story-item').count();
+            if (homeCount !== Math.min(3, sourceCount)) throw new Error('Home latest posts mismatch: ' + homeCount + '/' + sourceCount);
+
+            await page.goto('http://127.0.0.1:4173/story/', { waitUntil: 'networkidle' });
+            if (await page.locator('.site-header').count() !== 1 || await page.locator('footer').count() !== 1) throw new Error('Story chrome missing');
+            if (await page.locator('.site-nav a[aria-current="page"]').textContent() !== '이야기') throw new Error('Story nav not active');
+
+            await page.goto('http://127.0.0.1:4173/story/post.html?id=first-story-20260829', { waitUntil: 'networkidle' });
+            if (await page.locator('.site-header').count() !== 1 || await page.locator('footer').count() !== 1) throw new Error('Post chrome missing');
+            if (await page.locator('.post-article').count() !== 1) throw new Error('Post did not render');
+
+            await page.setViewportSize({ width: 390, height: 844 });
+            await page.goto('http://127.0.0.1:4173/story/', { waitUntil: 'networkidle' });
+            await page.locator('.menu-toggle').click();
+            if (await page.locator('.menu-toggle').getAttribute('aria-expanded') !== 'true') throw new Error('Mobile menu did not expand');
+            if (!(await page.locator('.site-nav').evaluate(el => el.classList.contains('open')))) throw new Error('Mobile nav open class missing');
+
+            if (errors.length) throw new Error(errors.join('\n'));
+            console.log(JSON.stringify({ sourcePosts: sourceCount, homeCards: homeCount, sharedChrome: true, mobileMenu: true, consoleErrors: 0 }));
+            await browser.close();
+          })().catch(error => { console.error(error); process.exit(1); });
+          NODE
+          node /tmp/verify-blog.cjs
