@@ -1,4 +1,5 @@
 name: Verify integrated blog once
+# rerun after script fix
 
 on:
   push:
