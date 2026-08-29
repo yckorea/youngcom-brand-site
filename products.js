@@ -15,7 +15,9 @@ const productCard = (product) => {
   name.textContent = product.name;
   const price = document.createElement('p');
   price.className = 'catalog-price';
-  price.textContent = typeof product.price === 'number'\n    ? `${new Intl.NumberFormat('ko-KR').format(product.price)}원`\n    : product.price;
+  price.textContent = typeof product.price === 'number'
+    ? `${new Intl.NumberFormat('ko-KR').format(product.price)}원`
+    : product.price;
   const link = document.createElement('a');
   link.className = 'catalog-buy';
   link.href = product.purchaseUrl;
