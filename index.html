@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#f7f5ef">
   <title>영컴통신 | 내게 맞는 연결을 더 쉽게</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="catalog.css">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -21,7 +22,7 @@
         <span class="sr-only">메뉴 열기</span><span></span><span></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-        <a href="#home">홈</a><a href="about.html">내 소개</a><a href="#products">제품</a>
+        <a href="#home">홈</a><a href="about.html">내 소개</a><a href="products.html">제품</a>
         <a href="#story">이야기</a><a class="nav-cta" href="#contact">연락하기</a>
       </nav>
     </div>
@@ -79,38 +80,13 @@
 
     <section class="section products" id="products">
       <div class="section-top reveal">
-        <div><p class="eyebrow">OUR PRODUCTS</p><h2>필요한 만큼,<br><em>알맞은 선택</em></h2></div>
-        <p>현재 상품명과 상세 내용은 임시 문구입니다.<br>실제 판매 제품에 맞춰 자유롭게 바꿔주세요.</p>
+        <div><p class="eyebrow">FEATURED PRODUCTS</p><h2>현장에서 믿고 쓰는<br><em>대표 제품과 기술</em></h2></div>
+        <p>제품 선택부터 프로그램 호환, 수리와 사후관리까지 30년 경험으로 함께합니다.</p>
       </div>
-      <div class="product-grid">
-        <article class="product-card featured reveal">
-          <div class="card-number">01</div>
-          <div class="product-icon icon-plan" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="product-content">
-            <span class="tag">BEST</span><h3>맞춤 요금제</h3>
-            <p>사용량과 생활 패턴을 살펴 낭비 없이 꼭 맞는 요금제를 찾아드립니다.</p>
-            <a href="#contact" aria-label="맞춤 요금제 상담하기">상담하기 <span>→</span></a>
-          </div>
-        </article>
-        <article class="product-card reveal">
-          <div class="card-number">02</div>
-          <div class="product-icon icon-device" aria-hidden="true"><div></div></div>
-          <div class="product-content">
-            <span class="tag">DEVICE</span><h3>스마트 기기</h3>
-            <p>휴대폰부터 생활 기기까지, 목적과 예산에 맞는 제품을 쉽게 비교해드립니다.</p>
-            <a href="#contact" aria-label="스마트 기기 문의하기">문의하기 <span>→</span></a>
-          </div>
-        </article>
-        <article class="product-card reveal">
-          <div class="card-number">03</div>
-          <div class="product-icon icon-home" aria-hidden="true"><div></div></div>
-          <div class="product-content">
-            <span class="tag">HOME</span><h3>인터넷 · 결합</h3>
-            <p>우리 집에 필요한 인터넷과 결합 혜택을 복잡함 없이 한눈에 정리해드립니다.</p>
-            <a href="#contact" aria-label="인터넷 결합 상담하기">상담하기 <span>→</span></a>
-          </div>
-        </article>
+      <div class="catalog-grid" data-product-list data-featured="true" data-limit="3" aria-live="polite">
+        <p class="catalog-error">대표 제품을 불러오는 중입니다.</p>
       </div>
+      <div class="catalog-more"><a class="button button-primary" href="products.html">전체 제품 보기 <span>→</span></a></div>
     </section>
 
     <section class="section story" id="story">
@@ -161,5 +137,6 @@
     <a class="back-top" href="#top" aria-label="맨 위로 이동">↑</a>
   </footer>
   <script src="script.js"></script>
+  <script src="products.js"></script>
 </body>
 </html>
