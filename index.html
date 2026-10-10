@@ -36,8 +36,9 @@
           <h1>어떤 현장에서도,<br><em>타협 없는 연결.</em></h1>
           <p class="hero-description">업무용 디지털무전기와 중계 시스템을 현장 조건에 맞춰 구성하고, 판매 이후까지 책임집니다.</p>
           <div class="hero-actions hero-contact-actions" aria-label="빠른 문의">
-            <a class="button button-primary" data-quick-action="phone" hidden>전화로 바로 상담</a>
-            <a class="button button-ghost" data-quick-action="directions" hidden>매장 길찾기</a>
+            <a class="button button-primary" data-quick-action="landline">대표번호 전화 상담</a>
+            <a class="button button-ghost" data-quick-action="mobile">휴대전화 상담</a>
+            <a class="button button-ghost" data-quick-action="directions" target="_blank" rel="noopener noreferrer">매장 길찾기</a>
             <a class="button button-ghost" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">스마트스토어 문의</a>
             <a class="button button-ghost" href="#products">제품 라인업 보기</a>
           </div>
@@ -102,6 +103,13 @@
         <p class="eyebrow eyebrow-on-dark">PROJECT INQUIRY</p>
         <h2>당신의 현장에는<br>어떤 연결이 필요합니까?</h2>
         <p>거리와 구조, 사용 중인 장비를 알려주시면 현장에 맞는 방향을 함께 살펴보겠습니다.</p>
+        <address class="contact-details">
+          <a href="tel:0534215000"><span>대표번호</span><strong>053-421-5000</strong></a>
+          <a href="tel:01065248070"><span>휴대전화</span><strong>010-6524-8070</strong></a>
+          <a class="contact-address" href="https://www.google.com/maps/search/?api=1&amp;query=%EB%8C%80%EA%B5%AC%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EA%B5%90%EB%8F%99%EA%B8%B8%2061" target="_blank" rel="noopener noreferrer">
+            <span>매장 주소</span><strong>대구시 중구 교동길 61</strong><span>지도에서 길찾기 ↗</span>
+          </a>
+        </address>
         <div class="contact-actions">
           <a class="button button-primary" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">스마트스토어에서 상담하기</a>
           <a class="button button-ghost" href="products.html">제품 먼저 보기</a>
@@ -116,30 +124,31 @@
     <a class="back-top" href="#top" aria-label="맨 위로 이동">↑</a>
   </footer>
   <nav class="mobile-quick-actions" aria-label="빠른 연락 및 방문">
-    <a data-quick-action="phone" hidden>전화 상담</a>
-    <a data-quick-action="directions" hidden>매장 길찾기</a>
+    <a data-quick-action="landline">대표번호 전화</a>
+    <a data-quick-action="mobile">휴대전화 상담</a>
+    <a data-quick-action="directions" target="_blank" rel="noopener noreferrer">매장 길찾기</a>
     <a href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">상품 문의</a>
   </nav>
   <script>
-    // 전화번호와 길찾기 URL은 공식 정보 확인 후 이곳에 입력하세요.
-    // 예: phone: "tel:+82..." / directions: "https://maps.google.com/..."
     const quickActionTargets = {
-      phone: "",
-      directions: ""
+      landline: "tel:0534215000",
+      mobile: "tel:01065248070",
+      directions: "https://www.google.com/maps/search/?api=1&query=%EB%8C%80%EA%B5%AC%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EA%B5%90%EB%8F%99%EA%B8%B8%2061"
     };
 
-    const phoneTarget = /^tel:\+?[0-9][0-9(). -]*$/;
-    const directionsTarget = /^https:\/\//i;
+    const validTargets = {
+      landline: /^tel:\+?[0-9][0-9(). -]*$/,
+      mobile: /^tel:\+?[0-9][0-9(). -]*$/,
+      directions: /^https:\/\//i
+    };
 
     document.querySelectorAll("[data-quick-action]").forEach((link) => {
-      const target = quickActionTargets[link.dataset.quickAction]?.trim() || "";
-      const isValid = link.dataset.quickAction === "phone"
-        ? phoneTarget.test(target)
-        : directionsTarget.test(target);
-
-      if (isValid) {
+      const action = link.dataset.quickAction;
+      const target = quickActionTargets[action];
+      if (target && validTargets[action]?.test(target)) {
         link.href = target;
-        link.hidden = false;
+      } else {
+        link.hidden = true;
       }
     });
   </script>
