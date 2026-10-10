@@ -35,9 +35,11 @@
           <p class="eyebrow eyebrow-on-dark">BUSINESS RADIO SYSTEMS</p>
           <h1>어떤 현장에서도,<br><em>타협 없는 연결.</em></h1>
           <p class="hero-description">업무용 디지털무전기와 중계 시스템을 현장 조건에 맞춰 구성하고, 판매 이후까지 책임집니다.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#products">제품 라인업 보기</a>
-            <a class="button button-ghost" href="#contact">도입 문의하기</a>
+          <div class="hero-actions hero-contact-actions" aria-label="빠른 문의">
+            <a class="button button-primary" data-quick-action="phone" hidden>전화로 바로 상담</a>
+            <a class="button button-ghost" data-quick-action="directions" hidden>매장 길찾기</a>
+            <a class="button button-ghost" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">스마트스토어 문의</a>
+            <a class="button button-ghost" href="#products">제품 라인업 보기</a>
           </div>
           <ul class="hero-proof" aria-label="영컴통신의 강점">
             <li>30년 무선 기술 경험</li><li>프로그램 호환·수리</li><li>판매 후 사후책임</li>
@@ -101,7 +103,7 @@
         <h2>당신의 현장에는<br>어떤 연결이 필요합니까?</h2>
         <p>거리와 구조, 사용 중인 장비를 알려주시면 현장에 맞는 방향을 함께 살펴보겠습니다.</p>
         <div class="contact-actions">
-          <a class="button button-primary" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">스마트스토어 문의</a>
+          <a class="button button-primary" href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">스마트스토어에서 상담하기</a>
           <a class="button button-ghost" href="products.html">제품 먼저 보기</a>
         </div>
       </div>
@@ -113,6 +115,34 @@
     <div class="footer-info"><p>업무용 디지털무전기 · 중계 시스템 · 프로그램 호환 · 수리</p><p>© <span id="year"></span> YOUNGCOM COMMUNICATIONS.</p></div>
     <a class="back-top" href="#top" aria-label="맨 위로 이동">↑</a>
   </footer>
+  <nav class="mobile-quick-actions" aria-label="빠른 연락 및 방문">
+    <a data-quick-action="phone" hidden>전화 상담</a>
+    <a data-quick-action="directions" hidden>매장 길찾기</a>
+    <a href="https://smartstore.naver.com/ycts" target="_blank" rel="noopener noreferrer">상품 문의</a>
+  </nav>
+  <script>
+    // 전화번호와 길찾기 URL은 공식 정보 확인 후 이곳에 입력하세요.
+    // 예: phone: "tel:+82..." / directions: "https://maps.google.com/..."
+    const quickActionTargets = {
+      phone: "",
+      directions: ""
+    };
+
+    const phoneTarget = /^tel:\+?[0-9][0-9(). -]*$/;
+    const directionsTarget = /^https:\/\//i;
+
+    document.querySelectorAll("[data-quick-action]").forEach((link) => {
+      const target = quickActionTargets[link.dataset.quickAction]?.trim() || "";
+      const isValid = link.dataset.quickAction === "phone"
+        ? phoneTarget.test(target)
+        : directionsTarget.test(target);
+
+      if (isValid) {
+        link.href = target;
+        link.hidden = false;
+      }
+    });
+  </script>
   <script src="script.js"></script>
   <script src="products.js"></script>
   <script src="home-stories.js"></script>
