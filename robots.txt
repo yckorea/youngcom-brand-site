@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /story/admin.html
+
+Sitemap: https://youngcom-brand-site.vercel.app/sitemap.xml
