@@ -96,7 +96,19 @@
         const block = raw.trim();
         if (!block) return;
         const lines = block.split('\n');
-        if (lines.every((line) => /^- /.test(line.trim()))) {
+        const imageMatch = block.match(/^!\[([^\]]*)\]\((https?:\/\/[^\s)]+)\)$/);
+        if (imageMatch) {
+          const figure = element('figure');
+          const image = document.createElement('img');
+          image.src = imageMatch[2];
+          image.alt = imageMatch[1];
+          image.loading = 'lazy';
+          image.style.cssText = 'display:block;max-width:100%;height:auto;margin:0 auto;border-radius:12px';
+          figure.style.cssText = 'margin:28px 0';
+          figure.appendChild(image);
+          if (imageMatch[1]) figure.appendChild(element('figcaption', null, imageMatch[1]));
+          box.appendChild(figure);
+        } else if (lines.every((line) => /^- /.test(line.trim()))) {
           const list = element('ul');
           lines.forEach((line) => {
             const item = element('li');
